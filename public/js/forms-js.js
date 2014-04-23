@@ -31,7 +31,7 @@ function configureAjax() {
 // create message box asking the user for a passcode
 function promptForPassword() {
     // function to be called upon completing ajax post request
-    var helper = function(doc) {
+    var onComplete = function(doc) {
 	if (doc === null) {
 	    alert("password is invalid, please try again");
 	} else {
@@ -67,7 +67,7 @@ function promptForPassword() {
 			'dataType': 'json', // the datatype of the data sent back from the server to the client
 			'data': doc
 		    })
-			.done(helper);
+			.done(onComplete);
 		},
 		className: 'password', // Custom class name(s)
 		id: 'confirm', // Element ID
